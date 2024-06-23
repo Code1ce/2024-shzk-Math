@@ -1,0 +1,114 @@
+\ProvidesPackage{paper0}
+
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multirow}
+
+\newenvironment{question}[1][1]
+    {\begin{enumerate}[
+        label=\textbf{#1 },
+        topsep=0.1cm,
+        itemsep=-0.1cm, 
+        leftmargin=0.75cm, 
+        itemindent=0cm, 
+        labelsep=0.2cm, 
+        labelwidth=0.5cm,
+        align=left
+    ]}
+    {\end{enumerate}}
+
+\newenvironment{squestion}
+    {\begin{enumerate}[
+        label={(\arabic*)},
+        topsep=0cm,
+        itemsep=-0.1cm, 
+        leftmargin=0.75cm, 
+        itemindent=0cm, 
+        labelsep=0.2cm, 
+        labelwidth=0.5cm,
+        align=left
+    ]}
+    {\end{enumerate}}
+
+\newenvironment{ssquestion}
+    {\begin{enumerate}[
+        label={\text{\normalsize{\textcircled{\small{\arabic*}}}\normalsize\enspace}},
+        topsep=0cm,
+        itemsep=-0.1cm, 
+        leftmargin=0.55cm, 
+        itemindent=0cm, 
+        labelsep=0cm, 
+        labelwidth=0.5cm,
+        align=left
+    ]}
+    {\end{enumerate}}
+
+\newcommand{\qtitle}[1]{
+    \vspace{5pt}
+    \noindent{\heiti{#1}}
+}
+
+\newcommand{\blank}{~\underline{$~~~~\blacktriangle~~~~$}}
+
+\newcommand{\firstpage}[2]{
+    \renewcommand\arraystretch{1.6}
+    \noindent\begin{tabular}{|m{2cm}<{\centering}|m{6cm}<{\centering}|} \hline
+        \multirow{1}*{姓~~~~~~~~~~名} & \ \\ \hline
+        \multirow{1}*{报~~~名~~~号} & \ \\ \hline
+    \end{tabular} \leavevmode \\[220pt]
+    \renewcommand\arraystretch{1}
+    \begin{center}
+        {\fontsize{18pt}{\baselineskip}\selectfont #1年上海市初中学业水平考试} \\[16pt]
+        {\fontsize{40pt}{\baselineskip}\selectfont \heiti #2~~试卷} \\[220pt]
+        {\fontsize{14pt}{\baselineskip}\selectfont \heiti 由CodeIce制作~~|~~\LaTeX}
+    \end{center}
+}
+
+\newcommand{\ptitle}[2]{
+    \begin{center}
+        {\large{#1年上海市初中学业水平考试}} \\[8pt]
+        {\huge{\heiti #2~~试卷}}
+    \end{center}
+    {\heiti 考生注意：} 
+    \begin{enumerate}[
+            topsep=0.1cm,
+            itemsep=-0.1cm, 
+            leftmargin=0.75cm, 
+            itemindent=0cm, 
+            labelsep=0.2cm, 
+            labelwidth=0.5cm,
+            align=left
+        ]
+        \item {\heiti 本场考试时间100分钟，试卷共4页，满分150分，答题纸共2页．}
+        \item {\heiti 作答前，在答题纸指定位置填写姓名、报名号、座位号．将核对后的条形码贴在答题纸指定位置．}
+        \item {\heiti 所有作答务必填涂或书写在答题纸上与试卷题号相对应的区域，不得错位．在试卷上作答一律不得分． }
+        \item {\heiti 用2B铅笔作答选择题，用黑色字迹钢笔、水笔或圆珠笔作答非选择题．} \\
+    \end{enumerate}
+}
+
+% The following code is from https://zhuanlan.zhihu.com/p/393609767
+\newcommand{\onp} [4] { \\
+    \begin{tabular} {*{4}{@{}p{3.5cm}}}
+        A.~#1； & B.~#2； & C.~#3； & D.~#4．
+    \end{tabular}
+}
+
+% The following code is from https://zhuanlan.zhihu.com/p/393609767
+\newcommand{\onps} [4] {
+    \begin{tabular} {*{4}{@{}p{3.5cm}}}
+        A.~#1； & B.~#2； & C.~#3； & D.~#4．
+    \end{tabular}
+}
+
+% The following code is from https://zhuanlan.zhihu.com/p/393609767
+\newcommand{\twp} [4] { \\
+    \begin{tabular} {*{2}{@{}p{7cm}}}
+        A.~#1 & B.~#2
+    \end{tabular} \\
+    \begin{tabular} {*{2}{@{}p{7cm}}}
+        C.~#3 & D.~#4
+    \end{tabular}
+}
+
